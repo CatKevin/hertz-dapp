@@ -32,8 +32,8 @@ export const WeekColumn = styled(Box)`
 const Row = styled(Grid)`
   border-bottom: 1px solid ${({ theme }) => theme.colors.borderColor};
   grid-gap: 8px;
-  grid-template-areas: 'name aum topAsset inception month day week';
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: 'id name aum topAsset inception month day week';
+  grid-template-columns:1fr 4fr 2fr 2fr 2fr 1fr 1fr 1fr;
   padding: 8px 16px;
 
   ${({ theme }) => theme.mediaQueries.sm} {

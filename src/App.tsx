@@ -20,6 +20,7 @@ const Proposals = lazy(() => import('./views/Voting'))
 const NotFound = lazy(() => import('./views/NotFound'))
 const Assets = lazy(() => import('./views/Asset'))
 const AssetsDeposit = lazy(() => import('./views/Asset/Components/Details/Deposit'))
+const HertzTop = lazy(() => import('./views/Asset/Components/Details/HertzTop'))
 // const Exchange = lazy(() => import('./views/ComingSoon'))
 // const Liquidity = lazy(() => import('./views/ComingSoon'))
 // const Nft = lazy(() => import('./views/Nft'))
@@ -65,19 +66,22 @@ const App: React.FC = () => {
             <Route path="/airdrop">
               <Airdrop />
             </Route>
-            <Route path="/assets"
+            <Route
+              path="/assets"
               render={({ match: { url } }) => (
                 <>
                   <Route path={`${url}/`} component={Assets} exact />
                   <Route path={`${url}/deposit`} component={AssetsDeposit} />
+                  <Route path={`${url}/hertzTop`} component={HertzTop} />
                 </>
-              )} />
+              )}
+            />
             <Route component={NotFound} />
           </Switch>
         </Suspense>
       </Menu>
       {/* <NftGlobalNotification /> */}
-    </Router >
+    </Router>
   )
 }
 
