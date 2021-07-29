@@ -45,8 +45,13 @@ const config: MenuEntry[] = [
   },
   {
     label: 'AirDrop',
-    icon: 'VaultsIcon',
+    icon: 'GooseIcon',
     href: '/airdrop',
+  },
+  {
+    label: 'Assest Management',
+    icon: 'VaultsIcon',
+    href: '/assets',
   },
   {
     label: 'More',
