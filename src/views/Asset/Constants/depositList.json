@@ -1,0 +1,188 @@
+[
+    {
+        "id": "001",
+        "name": "USF Fund I",
+        "aum": "$60,854,660.96",
+        "assets": [
+            "steCRV-gauge",
+            "weth"
+        ],
+        "inception": "-32.05%",
+        "month": "0.63%",
+        "day": "0.05%",
+        "week": [
+            5,
+            10,
+            5,
+            20,
+            5,
+            30,
+            10,
+            20
+        ],
+        "color": "#31D0AA"
+    },
+    {
+        "id": "002",
+        "name": "Rhino Fund",
+        "aum": "$3,319,158.69",
+        "assets": [
+            "wbtc",
+            "weth",
+            "ren",
+            "usdc",
+            "dpi"
+        ],
+        "inception": "25.90%",
+        "month": "9.39%",
+        "day": "0.42%",
+        "week": [
+            5,
+            10,
+            5,
+            16,
+            7,
+            18,
+            20
+        ],
+        "color": "#31D0AA"
+    },
+    {
+        "id": "003",
+        "name": "Stablecoin Yield",
+        "aum": "$1,265,653.33",
+        "assets": [
+            "usdc",
+            "usdt"
+        ],
+        "inception": "-0.14%",
+        "month": "-0.14%",
+        "day": "-1.16%",
+        "week": [
+            23,
+            26,
+            10,
+            30,
+            19,
+            27,
+            20
+        ],
+        "color": "#ED4B9E"
+    },
+    {
+        "id": "004",
+        "name": "Yang Express",
+        "aum": "$1,214,258.86",
+        "assets": [
+            "usdc"
+        ],
+        "inception": "-33.34%",
+        "month": "-2.11%",
+        "day": "0.79%",
+        "week": [
+            23,
+            19,
+            20,
+            27,
+            21,
+            20,
+            16
+        ],
+        "color": "#ED4B9E"
+    },
+    {
+        "id": "005",
+        "name": "Stablecoin Yield",
+        "aum": "$1,265,653.33",
+        "assets": [
+            "usdc",
+            "usdt"
+        ],
+        "inception": "-0.14%",
+        "month": "-0.14%",
+        "day": "-1.16%",
+        "week": [
+            23,
+            26,
+            10,
+            30,
+            19,
+            27,
+            20
+        ],
+        "color": "#ED4B9E"
+    },
+    {
+        "id": "006",
+        "name": "AMM Vault",
+        "aum": "$1,030,450.29",
+        "assets": [
+            "wbtc",
+            "weth",
+            "usdt",
+            "dpi"
+        ],
+        "inception": "-29.19%",
+        "month": "601.55%",
+        "day": "0.1%",
+        "week": [
+            12,
+            23,
+            25,
+            18,
+            19,
+            27,
+            20
+        ],
+        "color": "#31D0AA"
+    },
+    {
+        "id": "007",
+        "name": "La Crypto C'est Rigolo 🤪",
+        "aum": "$358,849.45",
+        "assets": [
+            "steCRV-gauge",
+            "usdt",
+            "usdc",
+            "weth",
+            "wbtc"
+        ],
+        "inception": "0.33%",
+        "month": "0.85%",
+        "day": "0.97%",
+        "week": [
+            23,
+            26,
+            15,
+            29,
+            20,
+            14,
+            17
+        ],
+        "color": "#ED4B9E"
+    },
+    {
+        "id": "008",
+        "name": "Familia Fund",
+        "aum": "$290,641.69",
+        "assets": [
+            "usdc",
+            "usdt",
+            "ren",
+            "weth"
+        ],
+        "inception": "26.22%",
+        "month": "9.67%",
+        "day": "-0.15%",
+        "week": [
+            14,
+            23,
+            10,
+            9,
+            15,
+            30,
+            25
+        ],
+        "color": "#31D0AA"
+    }
+]

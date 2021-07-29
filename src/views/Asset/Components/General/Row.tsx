@@ -37,8 +37,8 @@ const Row = styled(Grid)`
   padding: 8px 16px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    grid-gap: 16px;
-    padding: 16px 24px;
+    grid-gap: 20px;
+    padding: 20px 24px;
   }
 `
 
