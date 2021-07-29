@@ -2,6 +2,7 @@
     {
         "id": "001",
         "name": "USF Fund I",
+        "manager": "Ben aka JL",
         "aum": "$60,854,660.96",
         "assets": [
             "steCRV-gauge",
@@ -20,11 +21,13 @@
             10,
             20
         ],
-        "color": "#31D0AA"
+        "color": "#31D0AA",
+        "weight": "18.93"
     },
     {
         "id": "002",
         "name": "Rhino Fund",
+        "manager": "0xB1",
         "aum": "$3,319,158.69",
         "assets": [
             "wbtc",
@@ -45,11 +48,13 @@
             18,
             20
         ],
-        "color": "#31D0AA"
+        "color": "#31D0AA",
+        "weight": "17.51"
     },
     {
         "id": "003",
         "name": "Stablecoin Yield",
+        "manager": "Adam Wong",
         "aum": "$1,265,653.33",
         "assets": [
             "usdc",
@@ -67,11 +72,13 @@
             27,
             20
         ],
-        "color": "#ED4B9E"
+        "color": "#ED4B9E",
+        "weight": "10.73"
     },
     {
         "id": "004",
         "name": "Yang Express",
+        "manager": "Dark Vadar",
         "aum": "$1,214,258.86",
         "assets": [
             "usdc"
@@ -88,11 +95,13 @@
             20,
             16
         ],
-        "color": "#ED4B9E"
+        "color": "#ED4B9E",
+        "weight": "9.63"
     },
     {
         "id": "005",
         "name": "Stablecoin Yield",
+        "manager": "Stable Mater",
         "aum": "$1,265,653.33",
         "assets": [
             "usdc",
@@ -116,6 +125,7 @@
         "id": "006",
         "name": "AMM Vault",
         "aum": "$1,030,450.29",
+        "manager": "All Star Capital",
         "assets": [
             "wbtc",
             "weth",
@@ -134,11 +144,13 @@
             27,
             20
         ],
-        "color": "#31D0AA"
+        "color": "#31D0AA",
+        "weight": "9.31"
     },
     {
         "id": "007",
         "name": "La Crypto C'est Rigolo 🤪",
+        "manager": "Little funny guy",
         "aum": "$358,849.45",
         "assets": [
             "steCRV-gauge",
@@ -159,11 +171,13 @@
             14,
             17
         ],
-        "color": "#ED4B9E"
+        "color": "#ED4B9E",
+        "weight": "8.44"
     },
     {
         "id": "008",
         "name": "Familia Fund",
+        "manager": "Batman",
         "aum": "$290,641.69",
         "assets": [
             "usdc",
@@ -183,6 +197,57 @@
             30,
             25
         ],
-        "color": "#31D0AA"
+        "color": "#31D0AA",
+        "weight": "7.07"
+    },
+    {
+        "id": "009",
+        "name": "Small Potato Fund",
+        "manager": "Mr Nobody",
+        "aum": "$190,641.69",
+        "assets": [
+            "usdc",
+            "usdt",
+            "weth"
+        ],
+        "inception": "56.22%",
+        "month": "9.67%",
+        "day": "-0.15%",
+        "week": [
+            15,
+            25,
+            11,
+            9,
+            15,
+            31,
+            21
+        ],
+        "color": "#31D0AA",
+        "weight": "6.63"
+    },
+    {
+        "id": "010",
+        "name": "CryptoLeek Fund",
+        "manager": "CryptoLeek",
+        "aum": "$1,290,641.69",
+        "assets": [
+            "usdc",
+            "wbtc",
+            "weth"
+        ],
+        "inception": "260.22%",
+        "month": "39.67%",
+        "day": "-0.15%",
+        "week": [
+            14,
+            23,
+            10,
+            9,
+            15,
+            30,
+            25
+        ],
+        "color": "#31D0AA",
+        "weight": "6.39"
     }
 ]
