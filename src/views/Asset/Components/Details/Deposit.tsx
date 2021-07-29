@@ -1,6 +1,6 @@
 import React from "react"
 import Select, { OptionProps } from 'components/Select/select'
-import { Text, Card, Flex, Heading, Input, Button } from "leek-uikit"
+import { Text, Card, Flex, Heading, Input } from "leek-uikit"
 import Container from "components/layout/Container"
 import Hero from "../General/Hero"
 import Row, { NameColumn, AumColumn, TopAssetsColumn, InceptionColumn, MonthColumn, DayColumn, WeekColumn } from "../General/Row"

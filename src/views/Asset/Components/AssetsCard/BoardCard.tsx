@@ -101,7 +101,7 @@ const BoardCard = () => {
                         </Flex>
 
                         {
-                            account ? <Button fullWidth>Browse</Button> : <UnlockButton fullWidth />
+                            account ? <Button fullWidth as={Link} to="/assets/monitor">Browse</Button> : <UnlockButton fullWidth />
                         }
 
                     </CardConatiner>
