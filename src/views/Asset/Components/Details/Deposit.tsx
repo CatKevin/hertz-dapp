@@ -1,10 +1,9 @@
 import React from "react"
 import Select, { OptionProps } from 'components/Select/select'
-import { Text, Card, Flex, Heading, Input } from "leek-uikit"
+import { Text, Card, Flex, Heading, Input, Box } from "leek-uikit"
 import Container from "components/layout/Container"
 import Hero from "../General/Hero"
 import Row, { NameColumn, AumColumn, TopAssetsColumn, InceptionColumn, MonthColumn, DayColumn, WeekColumn } from "../General/Row"
-
 import deposit from "../../Constants/depositList.json"
 import DepositRow from "../General/DepositRow"
 import Questions from "../General/Questions"
@@ -63,6 +62,11 @@ const Deposit = () => {
 
                 <Card>
                     <Row>
+                        <Box>
+                            <Text fontSize="12px" color="textSubtle" textTransform="uppercase" bold>
+                                # Index
+                            </Text>
+                        </Box>
                         <NameColumn>
                             <Text fontSize="12px" color="textSubtle" textTransform="uppercase" bold>
                                 NAME
@@ -106,7 +110,7 @@ const Deposit = () => {
 
                     {
                         deposit.map((item) => (
-                            <DepositRow key={item.id} name={item.name} aum={item.aum} assets={item.assets} month={item.month} day={item.day} inception={item.inception} week={item.week} color={item.color} />
+                            <DepositRow key={item.id} index={item.id} name={item.name} aum={item.aum} assets={item.assets} month={item.month} day={item.day} inception={item.inception} week={item.week} color={item.color} />
                         ))
                     }
                 </Card>

@@ -1,9 +1,10 @@
 import React from 'react'
 import { Sparklines, SparklinesLine, SparklinesSpots, SparklinesReferenceLine } from 'react-sparklines';
-import { Text } from 'leek-uikit'
+import { Text, Box } from 'leek-uikit'
 import Row, { NameColumn, AumColumn, TopAssetsColumn, InceptionColumn, MonthColumn, DayColumn, WeekColumn } from "./Row"
 
 interface ListProps {
+    index: string
     name: string,
     aum: string,
     assets: string[],
@@ -14,9 +15,14 @@ interface ListProps {
     color: string
 }
 
-const DepositRow: React.FC<ListProps> = ({ name, aum, assets, inception, month, day, week, color }) => {
+const DepositRow: React.FC<ListProps> = ({ index, name, aum, assets, inception, month, day, week, color }) => {
     return (
         <Row>
+            <Box>
+                <Text fontSize="12px" color="textSubtle" textTransform="uppercase" bold>
+                    {index}
+                </Text>
+            </Box>
             <NameColumn>
                 <Text>{name}</Text>
             </NameColumn>
@@ -47,7 +53,7 @@ const DepositRow: React.FC<ListProps> = ({ name, aum, assets, inception, month, 
 
             <WeekColumn>
                 <Sparklines data={week}>
-                    <SparklinesLine color={color} style={{ fill: "none" }} />
+                    <SparklinesLine color={color} />
                     <SparklinesSpots />
                     <SparklinesReferenceLine type="mean" />
                 </Sparklines>
