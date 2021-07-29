@@ -4,7 +4,7 @@ import Hero from "./Components/General/Hero"
 import BoardCard from "./Components/AssetsCard/BoardCard";
 
 const Assets = () => {
-  const title = "LeekDAO Assets Management"
+  const title = "Hertz Assets Management"
   const heading = "Property is under our care. We help you manage your assets."
   return (
     <div>

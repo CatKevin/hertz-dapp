@@ -82,7 +82,7 @@ const BoardCard = () => {
                             </Text>
                         </Flex>
 
-                        {account ? <Button fullWidth>Create Fund</Button> : <UnlockButton fullWidth />}
+                        {account ? <Button fullWidth as={Link} to="/assets/setup">Create Fund</Button> : <UnlockButton fullWidth />}
                     </CardConatiner>
                 </Card>
             </CardLayout>

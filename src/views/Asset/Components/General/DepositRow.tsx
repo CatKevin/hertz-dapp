@@ -32,8 +32,8 @@ const DepositRow: React.FC<ListProps> = ({ index, name, aum, assets, inception, 
             <TopAssetsColumn>
                 {
                     assets.map((item) => (
-                        <span>
-                            <img key={item} src={`./images/asset/token/${item}.png`} alt={item} width="25px" />
+                        <span key={item}>
+                            <img src={`./images/asset/token/${item}.png`} alt={item} width="25px" />
                         </span>
                     ))
                 }

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styled, { css } from 'styled-components'
-import { ArrowDropDownIcon, Text } from 'leek-uikit'
+import { ArrowDropDownIcon, Text, Flex } from 'leek-uikit'
 
 const DropDownHeader = styled.div`
   width: 100%;
@@ -45,7 +45,7 @@ const DropDownContainer = styled.div<{ isOpen: boolean; width: number; height: n
   user-select: none;
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    min-width: 168px;
+    min-width: 50%;
   }
 
   ${(props) =>
@@ -95,6 +95,7 @@ export interface SelectProps {
 }
 
 export interface OptionProps {
+    src?: string
     label: string
     value: any
 }
@@ -140,7 +141,12 @@ const Select: React.FunctionComponent<SelectProps> = ({ options, onChange }) => 
         <DropDownContainer isOpen={isOpen} ref={containerRef} {...containerSize}>
             {containerSize.width !== 0 && (
                 <DropDownHeader onClick={toggling}>
-                    <Text>{options[selectedOptionIndex].label}</Text>
+                    {
+                        options[selectedOptionIndex].src ? <Flex alignItems="center" justifyContent="flex-start">
+                            <img src={options[selectedOptionIndex].src} alt={options[selectedOptionIndex].label} width="30px" />
+                            <Text ml="10px">{options[selectedOptionIndex].label}</Text>
+                        </Flex> : <Text>{options[selectedOptionIndex].label}</Text>
+                    }
                 </DropDownHeader>
             )}
             <ArrowDropDownIcon color="text" onClick={toggling} />
@@ -149,7 +155,14 @@ const Select: React.FunctionComponent<SelectProps> = ({ options, onChange }) => 
                     {options.map((option, index) =>
                         index !== selectedOptionIndex ? (
                             <ListItem onClick={onOptionClicked(index)} key={option.label}>
-                                <Text>{option.label}</Text>
+                                {option.src ?
+                                    <Flex alignItems="center" justifyContent="flex-start">
+                                        <img src={option.src} alt={option.label} width="30px" />
+                                        <Text ml="10px">{option.label}</Text>
+                                    </Flex>
+                                    : <Text>{option.label}</Text>
+                                }
+
                             </ListItem>
                         ) : null,
                     )}

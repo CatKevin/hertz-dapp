@@ -22,6 +22,12 @@ const Assets = lazy(() => import('./views/Asset'))
 const AssetsDeposit = lazy(() => import('./views/Asset/Components/Details/Deposit'))
 const AssetsMonitor = lazy(() => import('./views/Asset/Components/Details/Monitor'))
 const HertzTop = lazy(() => import('./views/Asset/Components/Details/HertzTop'))
+const VaultSetup = lazy(() => import('./views/Asset/Components/Details/Vault'))
+const VaultFees = lazy(() => import('./views/Asset/Components/Details/Fees'))
+const VaultDeposits = lazy(() => import('./views/Asset/Components/Details/VaultDeposits'))
+const VaultRedemption = lazy(() => import('./views/Asset/Components/Details/Redemption'))
+const VaultAdvanced = lazy(() => import('./views/Asset/Components/Details/Advanced'))
+const VaultReview = lazy(() => import('./views/Asset/Components/Details/Review'))
 // const Exchange = lazy(() => import('./views/ComingSoon'))
 // const Liquidity = lazy(() => import('./views/ComingSoon'))
 // const Nft = lazy(() => import('./views/Nft'))
@@ -72,9 +78,15 @@ const App: React.FC = () => {
               render={({ match: { url } }) => (
                 <>
                   <Route path={`${url}/`} component={Assets} exact />
-                  <Route path={`${url}/deposit`} component={AssetsDeposit} />
-                  <Route path={`${url}/monitor`} component={AssetsMonitor} />
-                  <Route path={`${url}/hertzTop`} component={HertzTop} />
+                  <Route path={`${url}/deposit`} component={AssetsDeposit} exact />
+                  <Route path={`${url}/monitor`} component={AssetsMonitor} exact />
+                  <Route path={`${url}/hertzTop`} component={HertzTop} exact />
+                  <Route path={`${url}/setup`} component={VaultSetup} exact />
+                  <Route path={`${url}/setup/1`} component={VaultFees} exact />
+                  <Route path={`${url}/setup/2`} component={VaultDeposits} exact />
+                  <Route path={`${url}/setup/3`} component={VaultRedemption} exact />
+                  <Route path={`${url}/setup/4`} component={VaultAdvanced} exact />
+                  <Route path={`${url}/setup/5`} component={VaultReview} exact />
                 </>
               )}
             />
