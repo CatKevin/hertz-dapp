@@ -30,25 +30,14 @@ const FormCard = () => {
   const [retweetUrl, setRetweetUrl] = useState("")
   const [telegramName, setTelegramName] = useState("")
   const [discordName, setDiscordName] = useState("")
-  const [validTwitterName, setValidTwitterName] = useState(true)
+  const [validTwitter, setValidTwitter] = useState(true)
+  const [validRetweetUrl, setValidRetweetUrl] = useState(true)
+  const [validTelegram, setValidTelegram] = useState(true)
+  const [validDiscord, setValidDiscord] = useState(true)
+  const [validEmail, setValidEmail] = useState(true)
   const [email, setEmail] = useState("")
-  const isRetweetUrlNotEmpty = retweetUrl.trim().length > 0
-  const isTelegramNameValid = telegramName.trim().length > 0
-  const isDiscordNameValid = discordName.trim().length > 0
-  const isRetweetUrlValid = validator.isURL(retweetUrl)
-  const isEmailValid = validator.isEmail(email)
   const [isVerified, setIsVerified] = useState(false);
   const [hover, setHover] = useState(false);
-
-  let RetweetUrlErrorMessageComp;
-
-  if (account) {
-    if (!isRetweetUrlNotEmpty) {
-      RetweetUrlErrorMessageComp = <Text color="failure" fontSize="15px" mt="5px">Sorry! Please input your Retweet URL</Text>
-    } else if (!isRetweetUrlValid) {
-      RetweetUrlErrorMessageComp = <Text color="failure" fontSize="15px" mt="5px">Sorry! Please input a valid Retweet URL</Text>
-    }
-  }
 
   const submitForm = (event) => {
     event.preventDefault();
@@ -87,25 +76,58 @@ const FormCard = () => {
 
   }
 
-  const handleIsValid = (e, field: string) => {
-    if (field === "twitter") {
-      const currentTwitterName = e.currentTarget.value;
-      setTwitterName(currentTwitterName)
-      if (currentTwitterName.length > 2) {
-        setValidTwitterName(true)
+  const validateAllFields = (field: string, fieldValue: string) => {
+    if (field === 'twitter') {
+      setTwitterName(fieldValue)
+      if (validator.isLength(fieldValue, { min: 1, max: 30 })) {
+        setValidTwitter(true)
+      } else {
+        setValidTwitter(false)
+      }
+    } else if (field === 'retweetUrl') {
+      setRetweetUrl(fieldValue)
+      if (validator.isURL(fieldValue)) {
+        setValidRetweetUrl(true)
+      } else {
+        setValidRetweetUrl(false)
+      }
+    } else if (field === 'telegram') {
+      setTelegramName(fieldValue)
+      if (validator.isLength(fieldValue, { min: 1, max: 30 })) {
+        setValidTelegram(true)
+      } else {
+        setValidTelegram(false)
+      }
+    } else if (field === 'discord') {
+      setDiscordName(fieldValue)
+      if (validator.isLength(fieldValue, { min: 1, max: 30 })) {
+        setValidDiscord(true)
+      } else {
+        setValidDiscord(false)
+      }
+    } else if (field === 'email') {
+      setEmail(fieldValue)
+      if (validator.isEmail(fieldValue)) {
+        setValidEmail(true)
+      } else {
+        setValidEmail(false)
       }
     }
   }
 
+  const handleIsValid = (e, field: string) => {
+    validateAllFields(field, e.currentTarget.value);
+  }
+
   const onBlurValidate = (field: string) => {
-    if (field === 'twitter') {
-      const currentTwitterName = twitterName;
-      if (currentTwitterName.length > 2) {
-        setValidTwitterName(true)
-      } else {
-        setValidTwitterName(false)
-      }
+    const fieldMapping = {
+      'twitter': twitterName,
+      'retweetUrl': retweetUrl,
+      'telegram': telegramName,
+      'discord': discordName,
+      'email': email
     }
+    validateAllFields(field, fieldMapping[field])
   }
 
   const [onPresentParticipationModal] = useModal(<ParticipationModal onDismiss={() => { return null }} />)
@@ -142,18 +164,16 @@ const FormCard = () => {
               placeholder="Your Twitter Name..."
               value={twitterName}
               onChange={(e) => handleIsValid(e, 'twitter')}
-              onBlur={(e) => onBlurValidate('twitter')}
+              onBlur={() => onBlurValidate('twitter')}
               required
-              isSuccess={account && validTwitterName}
-              isWarning={account && !validTwitterName}
+              isSuccess={account && validTwitter}
+              isWarning={account && !validTwitter}
               name="twitter_name"
             />
-            {account && !validTwitterName ? (
+            {account && !validTwitter && (
               <Text color="failure" fontSize="15px" mt="5px">
                 Sorry! Please input your Twitter Username
               </Text>
-            ) : (
-              ''
             )}
           </div>
 
@@ -163,12 +183,17 @@ const FormCard = () => {
               placeholder="Your Retweeted URL..."
               required
               value={retweetUrl}
-              onChange={(e) => setRetweetUrl(e.currentTarget.value)}
-              isSuccess={account && isRetweetUrlNotEmpty && isRetweetUrlValid}
-              isWarning={account && (!isRetweetUrlNotEmpty || !isRetweetUrlValid)}
+              onChange={(e) => handleIsValid(e, 'retweetUrl')}
+              onBlur={() => onBlurValidate('retweetUrl')}
+              isSuccess={account && validRetweetUrl}
+              isWarning={account && !validRetweetUrl}
               name="retweet_url"
             />
-            {RetweetUrlErrorMessageComp}
+            {account && !validRetweetUrl && (
+              <Text color="failure" fontSize="15px" mt="5px">
+                Sorry! Please input your Retweet Url!
+              </Text>
+            )}
           </div>
 
           <div style={{ marginBottom: '10px' }}>
@@ -176,19 +201,18 @@ const FormCard = () => {
             <Input
               type="text"
               placeholder="Your Telegram Name..."
-              value={telegramName}
-              onChange={(e) => setTelegramName(e.currentTarget.value)}
               required
-              isSuccess={account && isTelegramNameValid}
-              isWarning={account && !isTelegramNameValid}
+              value={telegramName}
+              onChange={(e) => handleIsValid(e, 'telegram')}
+              onBlur={() => onBlurValidate('telegram')}
+              isSuccess={account && validTelegram}
+              isWarning={account && !validTelegram}
               name="telegram_name"
             />
-            {account && !isTelegramNameValid ? (
+            {account && !validTelegram && (
               <Text color="failure" fontSize="15px" mt="5px">
                 Sorry! Please input your Telegram Username in the group
               </Text>
-            ) : (
-              ''
             )}
           </div>
 
@@ -198,18 +222,17 @@ const FormCard = () => {
               type="text"
               placeholder="Your Discord Name..."
               value={discordName}
-              onChange={(e) => setDiscordName(e.currentTarget.value)}
+              onChange={(e) => handleIsValid(e, 'discord')}
+              onBlur={() => onBlurValidate('discord')}
               required
-              isSuccess={account && isDiscordNameValid}
-              isWarning={account && !isDiscordNameValid}
+              isSuccess={account && validDiscord}
+              isWarning={account && !validDiscord}
               name="discord_name"
             />
-            {account && !isDiscordNameValid ? (
+            {account && !validDiscord && (
               <Text color="failure" fontSize="15px" mt="5px">
                 Sorry! Please input your Discord Username in the group
               </Text>
-            ) : (
-              ''
             )}
           </div>
 
@@ -234,17 +257,15 @@ const FormCard = () => {
               type="text"
               placeholder="Your Email Address ..."
               value={email}
-              onChange={(e) => setEmail(e.currentTarget.value)}
-              isSuccess={account && isEmailValid}
-              isWarning={account && !isEmailValid}
+              onChange={(e) => handleIsValid(e, 'email')}
+              isSuccess={account && validEmail}
+              isWarning={account && !validEmail}
               name="early_contributor"
             />
-            {account && !isEmailValid ? (
+            {account && !validEmail && (
               <Text color="failure" fontSize="15px" mt="5px">
                 Sorry! Please input a valid email address
               </Text>
-            ) : (
-              ''
             )}
           </div>
         </div>
@@ -253,9 +274,7 @@ const FormCard = () => {
           <Button
             type="submit"
             fullWidth
-            disabled={
-              !(validTwitterName && isTelegramNameValid && isDiscordNameValid && isRetweetUrlValid && isVerified)
-            }
+            disabled={!(validTwitter && validTelegram && validDiscord && validRetweetUrl && isVerified)}
           >
             {' '}
             Participate
