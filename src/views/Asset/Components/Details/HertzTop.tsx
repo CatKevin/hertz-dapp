@@ -1,17 +1,105 @@
-import React, {useState} from 'react'
+import React, { useState, useCallback } from 'react'
 import { Text, Card, Flex, Heading, Box, BaseLayout, Button } from 'leek-uikit'
 import Container from 'components/layout/Container'
 import styled from 'styled-components'
-
-import { LineChart, Line} from 'recharts'
+import { LineChart, Line, PieChart, Pie, Sector, Cell, BarChart, CartesianGrid, XAxis, YAxis, Bar } from 'recharts'
+import { Sparklines, SparklinesLine, SparklinesSpots, SparklinesReferenceLine } from 'react-sparklines'
+import deposit from '../../Constants/depositList.json'
 
 import Hero from '../General/Hero'
-import Row, {
-  NameColumn,
-  AumColumn,
-  TopAssetsColumn,
-  InceptionColumn,
-} from '../General/Row'
+import Row, { NameColumn, AumColumn, TopAssetsColumn, InceptionColumn, MonthColumn } from '../General/Row'
+
+import Questions from "../General/Questions"
+
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#ec2eb3', '#767177']
+
+const renderActiveShape = (props) => {
+  const RADIAN = Math.PI / 180
+  const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent, value } = props
+  const sin = Math.sin(-RADIAN * midAngle)
+  const cos = Math.cos(-RADIAN * midAngle)
+  const sx = cx + (outerRadius + 10) * cos
+  const sy = cy + (outerRadius + 10) * sin
+  const mx = cx + (outerRadius + 30) * cos
+  const my = cy + (outerRadius + 30) * sin
+  const ex = mx + (cos >= 0 ? 1 : -1) * 22
+  const ey = my
+  const textAnchor = cos >= 0 ? 'start' : 'end'
+
+  return (
+    <g>
+      <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
+        {payload.name}
+      </text>
+      <Sector
+        cx={cx}
+        cy={cy}
+        innerRadius={innerRadius}
+        outerRadius={outerRadius}
+        startAngle={startAngle}
+        endAngle={endAngle}
+        fill={fill}
+      />
+      <Sector
+        cx={cx}
+        cy={cy}
+        startAngle={startAngle}
+        endAngle={endAngle}
+        innerRadius={outerRadius + 6}
+        outerRadius={outerRadius + 10}
+        fill={fill}
+      />
+      <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
+      <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
+      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`PV ${value}`}</text>
+      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
+        {`(Rate ${(percent * 100).toFixed(2)}%)`}
+      </text>
+    </g>
+  )
+}
+
+const barChartData = [
+  {
+    name: 'USD',
+    amtY: '$24,000,000',
+    amt: 24000000,
+  },
+  {
+    name: 'ETH',
+    amtY: '$6,000,000',
+    amt: 6000000,
+  },
+  {
+    name: 'BTC',
+    amtY: '$12,000,000',
+    amt: 12000000,
+  },
+  {
+    name: 'DPI',
+    amtY: '$8,727,272',
+    amt: 8727272,
+  },
+  {
+    name: 'NFT',
+    amtY: '$2,397,839',
+    amt: 2397839,
+  },
+  {
+    name: 'Other',
+    amtY: '$240,000',
+    amt: 240000,
+  },
+]
+
+const exposureData = [
+  { name: 'USDT/USD', value: 400 },
+  { name: 'ETH', value: 100 },
+  { name: 'WBTC', value: 200 },
+  { name: 'DPI', value: 150 },
+  { name: 'NFT', value: 40 },
+  { name: 'OTHERS', value: 10 },
+]
 
 const data = [
   {
@@ -79,10 +167,19 @@ const CurrentLayout = styled(BaseLayout)`
 `
 
 const HertzTop: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0)
   const [chartInterval, setChartInterval] = useState('month')
-
   const title = 'Hertz Top Index'
   const heading = 'Invest in best top 10 fund as an Index '
+
+
+  const onPieEnter = useCallback(
+    (_, index) => {
+      setActiveIndex(index)
+    },
+    [setActiveIndex],
+  )
+
   return (
     <div>
       <Hero title={title} heading={heading} />
@@ -106,13 +203,13 @@ const HertzTop: React.FC = () => {
           <Heading size="md" mb="10px">
             LIFETIME RETURN ℹ️
           </Heading>
-          <Text fontSize="30px" mb="10px" color="green">
+          <Text fontSize="30px" mb="10px" color="#31D0AA">
             +179.3%
           </Text>
           <Heading size="md" mb="10px">
             MINING APR ℹ️
           </Heading>
-          <Text fontSize="30px" mb="10px" color="green">
+          <Text fontSize="30px" mb="10px" color="#31D0AA">
             19.3%
           </Text>
         </Flex>
@@ -168,7 +265,7 @@ const HertzTop: React.FC = () => {
 
       <Container>
         <Flex alignItems="center" justifyContent="space-between" mb="20px" mt="20px">
-          <Heading>About Hertz Top Index</Heading>
+          <Heading size="lg">About Hertz Top Index</Heading>
         </Flex>
         <Flex alignItems="center" justifyContent="center" mb="20px">
           <Text>
@@ -222,35 +319,93 @@ const HertzTop: React.FC = () => {
                 # Performance
               </Text>
             </InceptionColumn>
-          </Row>
-          <Row>
-            <Box>
-              <Text fontSize="12px" color="textSubtle" textTransform="uppercase">
-                1
+            <Box width="100px">
+              <Text fontSize="12px" color="textSubtle" textTransform="uppercase" bold>
+                # Charts
               </Text>
             </Box>
-            <NameColumn>
-              <Text fontSize="12px" color="textSubtle" textTransform="uppercase">
-                Jesse Livermore Hearts Crypto
-              </Text>
-            </NameColumn>
-            <AumColumn>
-              <Text fontSize="12px" color="textSubtle" textTransform="uppercase">
-                Ben aka JL
-              </Text>
-            </AumColumn>
-            <TopAssetsColumn>
-              <Text fontSize="12px" color="textSubtle" textTransform="uppercase">
-                18.93%
-              </Text>
-            </TopAssetsColumn>
-            <InceptionColumn>
-              <Text fontSize="12px" color="textSubtle" textTransform="uppercase">
-                +317.19%
-              </Text>
-            </InceptionColumn>
           </Row>
+
+          {deposit.map((item) => (
+            <Row key={item.id}>
+              <Box>
+                <Text fontSize="" color="" textTransform="uppercase">
+                  {item.id}
+                </Text>
+              </Box>
+              <NameColumn>
+                <Text fontSize="" color="" textTransform="uppercase">
+                  {item.name}
+                </Text>
+              </NameColumn>
+              <AumColumn>
+                <Text fontSize="" color="" textTransform="uppercase">
+                  {item.manager}
+                </Text>
+              </AumColumn>
+              <TopAssetsColumn>
+                <Text fontSize="" color="" textTransform="uppercase">
+                  {item.weight}
+                </Text>
+              </TopAssetsColumn>
+              <InceptionColumn>
+                <Text fontSize="" color="" textTransform="uppercase">
+                  {item.inception}
+                </Text>
+              </InceptionColumn>
+              <MonthColumn>
+                <Sparklines data={item.week} width={250} height={100}>
+                  <SparklinesLine color={item.color} />
+                  <SparklinesSpots />
+                  <SparklinesReferenceLine type="mean" />
+                </Sparklines>
+              </MonthColumn>
+            </Row>
+          ))}
         </Card>
+        <Heading size="lg" mt="20px">
+          Exposure
+        </Heading>
+        <Flex alignItems="center" justifyContent="space-between" mb="20px" mt="20px">
+          <PieChart width={400} height={600}>
+            <Pie
+              activeIndex={activeIndex}
+              activeShape={renderActiveShape}
+              data={exposureData}
+              cx="200"
+              cy="300"
+              innerRadius={60}
+              outerRadius={80}
+              dataKey="value"
+              onMouseEnter={onPieEnter}
+            >
+              {data.map((entry, index) => (
+                <Cell fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+          </PieChart>
+          <BarChart
+            width={500}
+            height={300}
+            data={barChartData}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis width={100} />
+            <Bar dataKey="amt">
+              {barChartData.map((entry, index) => (
+                <Cell fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Bar>
+          </BarChart>
+        </Flex>
+        <Questions />
       </Container>
     </div>
   )
