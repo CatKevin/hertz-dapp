@@ -31,14 +31,14 @@ export const WeekColumn = styled(Box)`
 
 const Row = styled(Grid)`
   border-bottom: 1px solid ${({ theme }) => theme.colors.borderColor};
-  grid-gap: 8px;
+  grid-gap: 10px;
   grid-template-areas: 'name aum topAsset inception month day week';
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1.3fr 1.2fr 2fr 1fr 1fr 1fr 1fr;
   padding: 8px 16px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    grid-gap: 16px;
-    padding: 16px 24px;
+    grid-gap: 20px;
+    padding: 20px 24px;
   }
 `
 
