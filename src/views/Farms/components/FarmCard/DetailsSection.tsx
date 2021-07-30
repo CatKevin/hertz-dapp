@@ -1,7 +1,7 @@
 import React from 'react'
 import useI18n from 'hooks/useI18n'
 import styled from 'styled-components'
-import { Text, Flex, Link, LinkExternal } from 'leek-uikit'
+import { Text, Flex, Link, LinkExternal } from 'hertz-uikit'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import getUrl from 'utils/getLPUrl'
 import { Address } from 'config/constants/types'

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { Modal } from 'leek-uikit'
+import { Modal } from 'hertz-uikit'
 import { ConfirmedIcon } from './helpers'
 
 type ConfirmationPendingContentProps = { onDismiss: () => void }
@@ -20,7 +20,7 @@ const Spinner = styled.img`
   height: 16px;
 `
 
-const CustomLightSpinner = styled(Spinner)<{ size: string }>`
+const CustomLightSpinner = styled(Spinner) <{ size: string }>`
   height: ${({ size }) => size};
   width: ${({ size }) => size};
 `

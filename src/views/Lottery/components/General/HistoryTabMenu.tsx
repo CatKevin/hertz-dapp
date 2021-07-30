@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonMenu, ButtonMenuItem } from 'leek-uikit'
+import { ButtonMenu, ButtonMenuItem } from 'hertz-uikit'
 
 const HistoryTabMenu = ({ setActiveIndex, activeIndex }) => {
     return (

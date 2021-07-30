@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal } from 'leek-uikit'
+import { Modal } from 'hertz-uikit'
 import LoadingContent from '../General/LoadingContent'
 
 type ConfirmationPendingContentProps = { onDismiss: () => void }

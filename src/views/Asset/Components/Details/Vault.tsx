@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import validator from 'validator'
-import { Text, Flex, Heading, Box, Input, Button } from "leek-uikit"
+import { Text, Flex, Heading, Box, Input, Button } from "hertz-uikit"
 import Container from "components/layout/Container"
 import Select from 'components/Select/select'
 import Divider from "../General/Divider"

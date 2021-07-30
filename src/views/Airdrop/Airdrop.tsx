@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Container from "components/layout/Container";
-import { BaseLayout, Flex, Heading } from "leek-uikit";
+import { BaseLayout, Flex, Heading } from "hertz-uikit";
 import FormCard from "./AirdropCard/FormCard";
 import InfoCard from "./AirdropCard/InfoCard";
 import Hero from "./Hero"

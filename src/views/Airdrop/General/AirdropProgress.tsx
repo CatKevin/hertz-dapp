@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Progress } from 'leek-uikit'
+import { Progress } from 'hertz-uikit'
 
 interface IfoCardProgressProps {
     progress: number

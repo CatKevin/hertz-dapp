@@ -1,5 +1,5 @@
 import React from "react";
-import { BaseLayout, Flex, Heading } from "leek-uikit";
+import { BaseLayout, Flex, Heading } from "hertz-uikit";
 import Hero from "./Components/General/Hero"
 import BoardCard from "./Components/AssetsCard/BoardCard";
 

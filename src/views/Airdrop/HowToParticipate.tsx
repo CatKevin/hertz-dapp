@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Flex, Text, Heading, Link } from 'leek-uikit'
+import { Box, Flex, Text, Heading, Link } from 'hertz-uikit'
 
 const Divider = styled.div`
   background-color: ${({ theme }) => theme.colors.borderColor};

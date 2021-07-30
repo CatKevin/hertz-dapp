@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BaseLayout, Box, Flex, Heading } from "leek-uikit";
+import { BaseLayout, Box, Flex, Heading } from "hertz-uikit";
 import Container from "components/layout/Container";
 import styled from "styled-components";
 import Hero from "./Hero";

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styled, { css } from 'styled-components'
-import { ArrowDropDownIcon, Text, Flex } from 'leek-uikit'
+import { ArrowDropDownIcon, Text, Flex } from 'hertz-uikit'
 
 const DropDownHeader = styled.div`
   width: 100%;
@@ -49,8 +49,8 @@ const DropDownContainer = styled.div<{ isOpen: boolean; width: number; height: n
   }
 
   ${(props) =>
-        props.isOpen &&
-        css`
+    props.isOpen &&
+    css`
       ${DropDownHeader} {
         border-bottom: 1px solid 1px solid rgb(215, 202, 236);
         border-radius: 16px 16px 0 0;
@@ -90,86 +90,86 @@ const ListItem = styled.li`
 `
 
 export interface SelectProps {
-    options: OptionProps[]
-    onChange?: (option: OptionProps) => void
+  options: OptionProps[]
+  onChange?: (option: OptionProps) => void
 }
 
 export interface OptionProps {
-    src?: string
-    label: string
-    value: any
+  src?: string
+  label: string
+  value: any
 }
 
 const Select: React.FunctionComponent<SelectProps> = ({ options, onChange }) => {
-    const containerRef = useRef(null)
-    const dropdownRef = useRef(null)
-    const [isOpen, setIsOpen] = useState(false)
-    const [selectedOptionIndex, setSelectedOptionIndex] = useState(0)
-    const [containerSize, setContainerSize] = useState({ width: 0, height: 0 })
+  const containerRef = useRef(null)
+  const dropdownRef = useRef(null)
+  const [isOpen, setIsOpen] = useState(false)
+  const [selectedOptionIndex, setSelectedOptionIndex] = useState(0)
+  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 })
 
-    const toggling = (event: React.MouseEvent<HTMLDivElement>) => {
-        setIsOpen(!isOpen)
-        event.stopPropagation()
+  const toggling = (event: React.MouseEvent<HTMLDivElement>) => {
+    setIsOpen(!isOpen)
+    event.stopPropagation()
+  }
+
+  const onOptionClicked = (selectedIndex: number) => () => {
+    setSelectedOptionIndex(selectedIndex)
+    setIsOpen(false)
+
+    if (onChange) {
+      onChange(options[selectedIndex])
+    }
+  }
+
+  useEffect(() => {
+    setContainerSize({
+      width: dropdownRef.current.offsetWidth, // Consider border
+      height: dropdownRef.current.offsetHeight,
+    })
+
+    const handleClickOutside = () => {
+      setIsOpen(false)
     }
 
-    const onOptionClicked = (selectedIndex: number) => () => {
-        setSelectedOptionIndex(selectedIndex)
-        setIsOpen(false)
-
-        if (onChange) {
-            onChange(options[selectedIndex])
-        }
+    document.addEventListener('click', handleClickOutside)
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
     }
+  }, [])
 
-    useEffect(() => {
-        setContainerSize({
-            width: dropdownRef.current.offsetWidth, // Consider border
-            height: dropdownRef.current.offsetHeight,
-        })
+  return (
+    <DropDownContainer isOpen={isOpen} ref={containerRef} {...containerSize}>
+      {containerSize.width !== 0 && (
+        <DropDownHeader onClick={toggling}>
+          {
+            options[selectedOptionIndex].src ? <Flex alignItems="center" justifyContent="flex-start">
+              <img src={options[selectedOptionIndex].src} alt={options[selectedOptionIndex].label} width="30px" />
+              <Text ml="10px">{options[selectedOptionIndex].label}</Text>
+            </Flex> : <Text>{options[selectedOptionIndex].label}</Text>
+          }
+        </DropDownHeader>
+      )}
+      <ArrowDropDownIcon color="text" onClick={toggling} />
+      <DropDownListContainer>
+        <DropDownList ref={dropdownRef}>
+          {options.map((option, index) =>
+            index !== selectedOptionIndex ? (
+              <ListItem onClick={onOptionClicked(index)} key={option.label}>
+                {option.src ?
+                  <Flex alignItems="center" justifyContent="flex-start">
+                    <img src={option.src} alt={option.label} width="30px" />
+                    <Text ml="10px">{option.label}</Text>
+                  </Flex>
+                  : <Text>{option.label}</Text>
+                }
 
-        const handleClickOutside = () => {
-            setIsOpen(false)
-        }
-
-        document.addEventListener('click', handleClickOutside)
-        return () => {
-            document.removeEventListener('click', handleClickOutside)
-        }
-    }, [])
-
-    return (
-        <DropDownContainer isOpen={isOpen} ref={containerRef} {...containerSize}>
-            {containerSize.width !== 0 && (
-                <DropDownHeader onClick={toggling}>
-                    {
-                        options[selectedOptionIndex].src ? <Flex alignItems="center" justifyContent="flex-start">
-                            <img src={options[selectedOptionIndex].src} alt={options[selectedOptionIndex].label} width="30px" />
-                            <Text ml="10px">{options[selectedOptionIndex].label}</Text>
-                        </Flex> : <Text>{options[selectedOptionIndex].label}</Text>
-                    }
-                </DropDownHeader>
-            )}
-            <ArrowDropDownIcon color="text" onClick={toggling} />
-            <DropDownListContainer>
-                <DropDownList ref={dropdownRef}>
-                    {options.map((option, index) =>
-                        index !== selectedOptionIndex ? (
-                            <ListItem onClick={onOptionClicked(index)} key={option.label}>
-                                {option.src ?
-                                    <Flex alignItems="center" justifyContent="flex-start">
-                                        <img src={option.src} alt={option.label} width="30px" />
-                                        <Text ml="10px">{option.label}</Text>
-                                    </Flex>
-                                    : <Text>{option.label}</Text>
-                                }
-
-                            </ListItem>
-                        ) : null,
-                    )}
-                </DropDownList>
-            </DropDownListContainer>
-        </DropDownContainer>
-    )
+              </ListItem>
+            ) : null,
+          )}
+        </DropDownList>
+      </DropDownListContainer>
+    </DropDownContainer>
+  )
 }
 
 export default Select

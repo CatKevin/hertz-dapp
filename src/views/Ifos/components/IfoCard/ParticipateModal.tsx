@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 // import BigNumber from 'bignumber.js'
-import { Modal, Button, Flex, useModal } from 'leek-uikit'
+import { Modal, Button, Flex, useModal } from 'hertz-uikit'
 import BalanceInput from 'components/Input/BalanceInput'
 import { getBalanceNumber, getMainTokenBalance } from 'utils/formatBalance'
 import BigNumber from 'bignumber.js'

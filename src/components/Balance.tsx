@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import CountUp from 'react-countup'
 import styled from 'styled-components'
-import { Text } from 'leek-uikit'
+import { Text } from 'hertz-uikit'
 
 interface TextProps {
   isDisabled?: boolean
@@ -15,7 +15,7 @@ interface BalanceProps extends TextProps {
   unit?: string
 }
 
-const StyledText = styled(Text)<TextProps>`
+const StyledText = styled(Text) <TextProps>`
   color: ${({ isDisabled, color, theme }) => (isDisabled ? theme.colors.textDisabled : color)};
 `
 

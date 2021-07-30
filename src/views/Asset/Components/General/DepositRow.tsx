@@ -1,6 +1,6 @@
 import React from 'react'
 import { Sparklines, SparklinesLine, SparklinesSpots, SparklinesReferenceLine } from 'react-sparklines';
-import { Text, Box } from 'leek-uikit'
+import { Text, Box } from 'hertz-uikit'
 import Row, { NameColumn, AumColumn, TopAssetsColumn, InceptionColumn, MonthColumn, DayColumn, WeekColumn } from "./Row"
 
 interface ListProps {

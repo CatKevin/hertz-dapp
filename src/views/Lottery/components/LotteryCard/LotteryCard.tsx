@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Card, Heading, Flex, Button, useModal, Text } from 'leek-uikit'
+import { Card, Heading, Flex, Button, useModal, Text } from 'hertz-uikit'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import styled from "styled-components"
 import UnlockButton from "components/UnlockButton";

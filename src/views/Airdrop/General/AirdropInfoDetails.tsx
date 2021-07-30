@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Link } from 'leek-uikit'
+import { Text, Link } from 'hertz-uikit'
 import { getBlockInfo } from 'utils/chainExplorer'
 import numeral from 'numeral'
 

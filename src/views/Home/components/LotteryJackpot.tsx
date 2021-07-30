@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from 'leek-uikit'
+import { Text } from 'hertz-uikit'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useTotalRewards } from 'hooks/useTickets'
 

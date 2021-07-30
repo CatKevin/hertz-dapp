@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from 'leek-uikit'
+import { Text } from 'hertz-uikit'
 import moment from 'moment'
 import { ProposalState } from 'state/types'
 

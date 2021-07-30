@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Container from "components/layout/Container"
-import { Flex, Heading, Text, Box, Button, Card, Checkbox } from "leek-uikit"
+import { Flex, Heading, Text, Box, Button, Card, Checkbox } from "hertz-uikit"
 import Questions from "../General/Questions"
 import Row, { NameColumn, AumColumn } from "../General/Row"
 import VaultHero from "../General/VaultHero"

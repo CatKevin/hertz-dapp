@@ -1,5 +1,5 @@
 import React from 'react'
-import { TagProps } from 'leek-uikit'
+import { TagProps } from 'hertz-uikit'
 import { CommunityTag, CoreTag, VoteNowTag, SoonTag, ClosedTag } from 'components/Tags'
 import { ProposalState } from 'state/types'
 

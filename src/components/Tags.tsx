@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tag, VerifiedIcon, CommunityIcon, BinanceIcon, VoteIcon, TimerIcon, BlockIcon } from 'leek-uikit'
+import { Tag, VerifiedIcon, CommunityIcon, BinanceIcon, VoteIcon, TimerIcon, BlockIcon } from 'hertz-uikit'
 
 const NoFeeTag = () => (
   <Tag variant="success" outline startIcon={<VerifiedIcon />}>

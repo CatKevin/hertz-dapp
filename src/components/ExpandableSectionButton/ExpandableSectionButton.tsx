@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ChevronDownIcon, ChevronUpIcon, Text } from 'leek-uikit'
+import { ChevronDownIcon, ChevronUpIcon, Text } from 'hertz-uikit'
 
 export interface ExpandableSectionButtonProps {
   onClick?: () => void

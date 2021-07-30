@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from 'react-router-dom'
 import styled from "styled-components";
-import { BaseLayout, Flex, Heading, Card, CardHeader, Text, Button } from "leek-uikit";
+import { BaseLayout, Flex, Heading, Card, CardHeader, Text, Button } from "hertz-uikit";
 import UnlockButton from "components/UnlockButton";
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 

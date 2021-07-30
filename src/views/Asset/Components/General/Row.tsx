@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Grid, Box } from 'leek-uikit'
+import { Grid, Box } from 'hertz-uikit'
 
 export const NameColumn = styled(Box).attrs({ alignItems: 'center' })`
   grid-area: name;

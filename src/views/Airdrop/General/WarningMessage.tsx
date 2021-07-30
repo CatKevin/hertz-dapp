@@ -1,5 +1,5 @@
 import React from "react"
-import { Text, WarningIcon } from "leek-uikit"
+import { Text, WarningIcon } from "hertz-uikit"
 import styled from "styled-components"
 import { ColumnCenter } from "./Column"
 

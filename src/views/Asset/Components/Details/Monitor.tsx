@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Container from "components/layout/Container"
 import Select, { OptionProps } from 'components/Select/select'
-import { Text, Card, Flex, Heading, BaseLayout, Box, Input } from "leek-uikit"
+import { Text, Card, Flex, Heading, BaseLayout, Box, Input } from "hertz-uikit"
 import Row, { NameColumn, AumColumn, TopAssetsColumn, InceptionColumn } from "../General/Row"
 import MonitorRow from "../General/MonitorRow"
 import Hero from "../General/Hero"

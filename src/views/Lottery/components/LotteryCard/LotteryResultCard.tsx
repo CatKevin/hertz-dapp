@@ -8,7 +8,7 @@ import {
     Button,
     useModal,
     Text,
-} from 'leek-uikit'
+} from 'hertz-uikit'
 import truncateWalletAddress from "utils/truncateWalletAddress"
 import { getChainExplorerUrl } from 'utils/chainExplorer'
 import { useWallet } from '@binance-chain/bsc-use-wallet'

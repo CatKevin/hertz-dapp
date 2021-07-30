@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Card, CardBody, Heading, Text, Link, Button } from 'leek-uikit'
+import { Card, CardBody, Heading, Text, Link, Button } from 'hertz-uikit'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import UnlockButton from 'components/UnlockButton'
 

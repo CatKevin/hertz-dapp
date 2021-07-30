@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
-import { Button, LinkExternal, Modal } from 'leek-uikit'
+import { Button, LinkExternal, Modal } from 'hertz-uikit'
 import { ArrowUpCircle } from 'react-feather'
 import { getTranscationHash } from 'utils/chainExplorer'
 import { AutoColumn } from './Column'

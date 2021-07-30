@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Container from "components/layout/Container"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
-import { Flex, Heading, Text, Toggle, InfoIcon, Box, Input, Button } from "leek-uikit"
+import { Flex, Heading, Text, Toggle, InfoIcon, Box, Input, Button } from "hertz-uikit"
 import Select from 'components/Select/select'
 import VaultHero from "../General/VaultHero"
 import BreadcrumbList from "../General/BreadcrumbList"

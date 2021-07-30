@@ -8,7 +8,7 @@ import {
     Button,
     ChevronUpIcon,
     Text,
-} from 'leek-uikit'
+} from 'hertz-uikit'
 import Row, { AddressColumn, ChoiceColumn, VotingPowerColumn } from '../General/Row'
 import { useGetParticipationList, useGetCurrentRound } from '../../api'
 import ParticipantsListRow from "../General/ParticipantsListRow"

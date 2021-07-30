@@ -1,5 +1,5 @@
 import React from "react"
-import { Text, CheckmarkCircleIcon } from "leek-uikit"
+import { Text, CheckmarkCircleIcon } from "hertz-uikit"
 import styled from "styled-components"
 import { ColumnCenter } from "./Column"
 

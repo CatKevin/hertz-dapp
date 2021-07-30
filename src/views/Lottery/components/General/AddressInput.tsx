@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button } from 'leek-uikit'
+import { Button } from 'hertz-uikit'
 import Input, { InputProps } from 'components/Input'
 
 interface Props extends InputProps {

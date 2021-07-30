@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Modal, Flex, Input, Heading, useModal } from 'leek-uikit'
+import { Button, Modal, Flex, Input, Heading, useModal } from 'hertz-uikit'
 import { useLottery } from 'hooks/useContract'
 import LuckyDrawTransactionModal from "./LuckyDrawTransactionModal"
 import ConfirmationPendingContent from './ConfirmationPendingModal'

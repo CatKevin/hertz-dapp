@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import BigNumber from "bignumber.js"
 import { getBalanceNumber } from 'utils/formatBalance'
-import { Card, CardHeader, Heading, Flex, Button, useModal, Text, LinkExternal, Box } from 'leek-uikit'
+import { Card, CardHeader, Heading, Flex, Button, useModal, Text, LinkExternal, Box } from 'hertz-uikit'
 import { getChainExplorerUrl } from "utils/chainExplorer"
 import UnlockButton from "components/UnlockButton"
 import { useAirdropContract } from "hooks/useContract"

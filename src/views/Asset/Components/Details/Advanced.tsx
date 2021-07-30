@@ -1,7 +1,7 @@
 import React from "react"
 import Container from "components/layout/Container"
 import { Link } from "react-router-dom"
-import { Flex, Heading, Text, Box, Input, Button } from "leek-uikit"
+import { Flex, Heading, Text, Box, Input, Button } from "hertz-uikit"
 import VaultHero from "../General/VaultHero"
 import BreadcrumbList from "../General/BreadcrumbList"
 import Divider from "../General/Divider"

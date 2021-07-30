@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Modal } from 'leek-uikit'
+import { Button, Modal } from 'hertz-uikit'
 import { AutoColumn } from '../General/Column'
 import ErrorMessage from '../General/ErrorMessage'
 import { store } from "../../store/store"

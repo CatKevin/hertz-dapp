@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react'
-import { Flex, Radio, Text } from 'leek-uikit'
+import { Flex, Radio, Text } from 'hertz-uikit'
 import styled from 'styled-components'
 import { ProposalState } from 'state/types'
 

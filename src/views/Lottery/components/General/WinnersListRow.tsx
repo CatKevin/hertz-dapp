@@ -1,7 +1,7 @@
 import React from 'react'
 import truncateWalletAddress from "utils/truncateWalletAddress"
 import { getChainExplorerUrl } from 'utils/chainExplorer'
-import { Flex, LinkExternal, Text } from 'leek-uikit'
+import { Flex, LinkExternal, Text } from 'hertz-uikit'
 import Row, { AddressColumn, VotingPowerColumn } from './Row'
 
 interface ListProps {

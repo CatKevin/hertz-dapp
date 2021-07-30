@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { BaseLayout } from 'leek-uikit'
+import { BaseLayout } from 'hertz-uikit'
 
 const NftGrid = styled(BaseLayout)`
   padding-bottom: 24px;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, Heading } from 'leek-uikit'
+import { Card, Heading } from 'hertz-uikit'
 import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, from } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 import Container from 'components/layout/Container'

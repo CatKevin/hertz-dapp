@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { Text, Card, Flex, Heading, Box, BaseLayout, Button } from 'leek-uikit'
+import { Text, Card, Flex, Heading, Box, BaseLayout, Button } from 'hertz-uikit'
 import Container from 'components/layout/Container'
 import styled from 'styled-components'
 import { LineChart, Line, PieChart, Pie, Sector, Cell, BarChart, CartesianGrid, XAxis, YAxis, Bar } from 'recharts'

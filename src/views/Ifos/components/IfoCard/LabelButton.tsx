@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes } from 'react'
 import styled from 'styled-components'
-import { Button, Text } from 'leek-uikit'
+import { Button, Text } from 'hertz-uikit'
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   value: string

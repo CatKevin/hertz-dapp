@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading, Text, Flex } from 'leek-uikit'
+import { Heading, Text, Flex } from 'hertz-uikit'
 
 interface IfoCardHeaderProps {
   ifoId: string

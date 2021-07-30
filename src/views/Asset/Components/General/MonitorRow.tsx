@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Text, Box, Heading } from 'leek-uikit'
+import { Flex, Text, Box, Heading } from 'hertz-uikit'
 import truncateWalletAddress from "utils/truncateWalletAddress"
 import Row, { NameColumn, AumColumn, TopAssetsColumn, InceptionColumn } from "./Row"
 

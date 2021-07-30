@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from 'leek-uikit'
+import { Text } from 'hertz-uikit'
 
 const Footer: React.FC = () => {
     const chainId = process.env.REACT_APP_CHAIN_ID

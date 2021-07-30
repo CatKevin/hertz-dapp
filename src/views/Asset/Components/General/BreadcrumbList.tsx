@@ -1,5 +1,5 @@
 import React from "react"
-import { Breadcrumbs, Text } from "leek-uikit"
+import { Breadcrumbs, Text } from "hertz-uikit"
 
 const steps = ['Basic', 'Fees (optional)', 'Deposits (optional)', 'Redemptions (optional)', 'Advanced Settings (optional)', 'Review']
 

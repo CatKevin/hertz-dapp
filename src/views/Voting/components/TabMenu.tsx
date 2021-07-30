@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { TabMenu as UIKitTabMenu, Tab, Flex, VerifiedIcon, CommunityIcon } from 'leek-uikit'
+import { TabMenu as UIKitTabMenu, Tab, Flex, VerifiedIcon, CommunityIcon } from 'hertz-uikit'
 import { ProposalType } from 'state/types'
 
 interface TabMenuProps {

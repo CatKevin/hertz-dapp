@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import ReCAPTCHA from "react-google-recaptcha";
-import { Card, CardHeader, Heading, Flex, Button, useModal, Text, Input, Link, InfoIcon } from 'leek-uikit'
+import { Card, CardHeader, Heading, Flex, Button, useModal, Text, Input, Link, InfoIcon } from 'hertz-uikit'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import UnlockButton from "components/UnlockButton"
 import validator from 'validator'

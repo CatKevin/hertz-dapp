@@ -1,5 +1,5 @@
 import React from "react"
-import { Heading, Flex, Text } from "leek-uikit"
+import { Heading, Flex, Text } from "hertz-uikit"
 import styled from "styled-components"
 import { ColumnCenter } from "./Column"
 import { ApiStatResponse } from "../../api"

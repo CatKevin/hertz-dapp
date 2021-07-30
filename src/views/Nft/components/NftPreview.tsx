@@ -1,6 +1,6 @@
 import React from 'react'
 import orderBy from 'lodash/orderBy'
-import { Card, CardBody, Heading } from 'leek-uikit'
+import { Card, CardBody, Heading } from 'hertz-uikit'
 import Container from 'components/layout/Container'
 import nfts from 'config/constants/nfts'
 import NftGrid from './NftGrid'

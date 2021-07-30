@@ -1,4 +1,4 @@
-import { MenuEntry } from 'leek-uikit'
+import { MenuEntry } from 'hertz-uikit'
 import UrlConfig from './UrlConfig'
 
 const chainId: string = process.env.REACT_APP_CHAIN_ID || '80001'

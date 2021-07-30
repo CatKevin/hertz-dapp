@@ -1,4 +1,4 @@
-import { Image } from 'leek-uikit'
+import { Image } from 'hertz-uikit'
 import styled from 'styled-components'
 
 const DesktopImage = styled(Image)`

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Heading, Image } from 'leek-uikit'
+import { Box, Flex, Heading, Image } from 'hertz-uikit'
 import styled from 'styled-components'
 import Container from 'components/layout/Container'
 

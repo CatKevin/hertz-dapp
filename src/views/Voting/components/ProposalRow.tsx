@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ArrowForwardIcon, Box, IconButton, Flex, Text, Heading } from 'leek-uikit'
+import { ArrowForwardIcon, Box, IconButton, Flex, Text, Heading } from 'hertz-uikit'
 import { useQuery } from "@apollo/client";
 import LOAD_PROPOSALS from "config/graphql/query";
 import styled from 'styled-components'

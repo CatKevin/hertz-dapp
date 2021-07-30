@@ -5,7 +5,7 @@ import { LanguageContext } from 'contexts/Localisation/languageContext'
 import useTheme from 'hooks/useTheme'
 import { usePriceCakeBusd } from 'state/hooks'
 import BigNumber from 'bignumber.js'
-import { Menu as UikitMenu } from 'leek-uikit'
+import { Menu as UikitMenu } from 'hertz-uikit'
 import config from './config'
 
 const Menu = (props) => {

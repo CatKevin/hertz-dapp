@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import styled, { ThemeContext } from 'styled-components'
-import { LinkExternal } from 'leek-uikit'
+import { LinkExternal } from 'hertz-uikit'
 import { ArrowUpCircle } from 'react-feather'
 import { getTranscationHash } from 'utils/chainExplorer'
 import { AutoColumn, ColumnCenter } from './Column'
