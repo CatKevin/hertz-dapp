@@ -24,6 +24,11 @@ const Fees = () => {
     const [isManagementChecked, setIsManagementChecked] = useState(false)
     const [isPerformanceChecked, setIsPerformanceChecked] = useState(false)
     const [isEntranceChecked, setIsEntranceChecked] = useState(false)
+    const [managementFee, setManagementFee] = useState("");
+    const [performanceFee, setPerformanceFee] = useState("");
+    const [crystallizationPeriod, setCrystallizationPeriod] = useState("");
+    const [entranceFee, setEntranceFee] = useState("");
+
 
     return (
         <div>
@@ -58,7 +63,9 @@ const Fees = () => {
                             <Box mt="10px">
                                 <Text mb="5px">Management Fee Rate</Text>
                                 <Box width="50%">
-                                    <Input readOnly value="1%" />
+                                    <Input type="number" min="1" max="100" placeholder="1%" value={managementFee} onChange={(e) => {
+                                        setManagementFee(e.target.value)
+                                    }} />
                                 </Box>
                             </Box>
                         </div>
@@ -80,14 +87,14 @@ const Fees = () => {
                             <Box mt="10px">
                                 <Text mb="5px">Performance Fee Rate</Text>
                                 <Box width="50%">
-                                    <Input value="10%" read-only />
+                                    <Input value={performanceFee} type="number" min="1" max="100" placeholder="30%" onChange={(e) => setPerformanceFee(e.target.value)} />
                                 </Box>
                             </Box>
 
                             <Box mt="10px">
                                 <Text mb="5px">Crystallization Period</Text>
                                 <Box width="50%">
-                                    <Input value="365 days" read-only />
+                                    <Input value={crystallizationPeriod} onChange={(e) => setCrystallizationPeriod(e.target.value)} placeholder="365 days" />
                                 </Box>
                             </Box>
                         </div>
@@ -108,7 +115,7 @@ const Fees = () => {
                             <Box mt="10px">
                                 <Text mb="5px">Entrance Fee Rate</Text>
                                 <Box width="50%">
-                                    <Input value="1%" read-only />
+                                    <Input value={entranceFee} onChange={(e) => setEntranceFee(e.target.value)} placeholder="1%" type="number" min="1" max="100" />
                                 </Box>
                             </Box>
 

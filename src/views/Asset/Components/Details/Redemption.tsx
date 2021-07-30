@@ -22,6 +22,7 @@ const ToggleWrapper = styled.div`
 
 const Redemption = () => {
     const [withdrawWindow, setWithdrawWindow] = useState(false)
+    const [duration, setDuration] = useState("");
 
     return (
         <div>
@@ -60,7 +61,7 @@ const Redemption = () => {
 
                                 <Box width="50%" style={{ marginTop: "10px" }}>
                                     <Text>Duration</Text>
-                                    <Input readOnly value="60 minutes" />
+                                    <Input value={duration} placeholder="60 minutes" onChange={(e) => setDuration(e.target.value)} />
                                 </Box>
                             </Box>
                         </div>

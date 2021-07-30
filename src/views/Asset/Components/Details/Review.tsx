@@ -89,7 +89,6 @@ const Review = () => {
                 <Box mt="10px">
                     <Button disabled={!isChecked}>Submit</Button>
                 </Box>
-
                 <Questions />
             </Container>
         </div >
