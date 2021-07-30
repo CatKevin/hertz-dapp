@@ -4,8 +4,8 @@ const UrlConfig = {
     "pool": "https://exchange.leekdao.xyz/#/pool",
   },
   "80001": {
-    "exchange": "https://cryptoleek-team.github.io/leekdaoswap-mumbai-testnet/#/swap",
-    "pool": "https://cryptoleek-team.github.io/leekdaoswap-mumbai-testnet/#/pool",
+    "exchange": "https://hertzfinance.github.io/hertz-swap/#/swap",
+    "pool": "https://hertzfinance.github.io/hertz-swap/#/pool",
   }
 }
 
