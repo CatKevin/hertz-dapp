@@ -60,19 +60,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Github',
-        href: 'https://github.com/cryptoleek-team',
+        href: 'https://github.com/HertzFinance',
       },
       {
         label: 'Docs',
         href: 'https://docs.leekdao.xyz/',
-      },
-      {
-        label: 'CryptoLeek Website',
-        href: 'https://www.bitcoinleek.com/',
-      },
-      {
-        label: 'LeekDAO Website',
-        href: 'https://leekdao.xyz/',
       },
     ],
   },

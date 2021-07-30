@@ -74,9 +74,7 @@ const Home: React.FC = () => {
         <Text color="warning">Project in Beta. Please use it at your own risk</Text>
       </Hero>
       <div>
-        <a href="./#/farms">
-          <BannerImg src="./images/banner.png" alt="banner" />
-        </a>
+        <BannerImg src="./images/banner.png" alt="banner" />
       </div>
       <div>
         <Cards>

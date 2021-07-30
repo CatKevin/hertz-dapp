@@ -20,7 +20,6 @@ const StyledFarmStakingCard = styled(Card)`
   background-repeat: no-repeat;
   background-position: top right;
   min-height: 376px;
-  max-height:450px;
 `
 
 const Block = styled.div`
@@ -74,12 +73,12 @@ const FarmedStakingCard = () => {
         </Heading>
         <CardImage src="./images/leek/2.png" alt="cake logo" width={64} height={64} />
         <Block>
-          <Label>{TranslateString(544, 'LEEK to Harvest')}</Label>
+          <Label>{TranslateString(544, 'HERTZ to Harvest')}</Label>
           <CakeHarvestBalance earningsSum={earningsSum} />
           <Label>~${(leekPrice * earningsSum).toFixed(2)}</Label>
         </Block>
         <Block>
-          <Label>{TranslateString(546, 'LEEK in Wallet')}</Label>
+          <Label>{TranslateString(546, 'HERTZ in Wallet')}</Label>
           <CakeWalletBalance cakeBalance={cakeBalance} />
           <Label>~${(leekPrice * cakeBalance).toFixed(2)}</Label>
         </Block>

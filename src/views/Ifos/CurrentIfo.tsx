@@ -76,7 +76,7 @@ const Ifo = () => {
           <div>
             <Title as="h2">{TranslateString(512, 'Want to launch your own IDO?')}</Title>
             <Text mb={3}>
-              Launch your project with LEEK, Polygon Network’s most transparent and active DeFi Platform
+              Launch your project with HERTZ, Polygon Network’s most transparent and active DeFi Platform
             </Text>
             <Button as="a" href="https://forms.gle/bry8f1ZJa5u4VRGZ6" external>
               Contact Us

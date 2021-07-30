@@ -30,7 +30,7 @@ const Hero = () => {
         <Flex alignItems="center" justifyContent="space-between">
           <Box pr="32px">
             <Title>
-              LeekDAO Lucky Draw
+              Hertz Lucky Draw
             </Title>
             <Heading mb="16px">
               Sometimes the Good Things in Life Do Come Easy

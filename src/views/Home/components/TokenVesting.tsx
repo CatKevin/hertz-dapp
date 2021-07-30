@@ -80,7 +80,7 @@ const TokenVesting = () => {
   const releaseTime = moment.utc(Number(state.releaseTime) * 1000).format('MMMM Do YYYY, HH:mm')
   const finalTime = moment.utc(Number(state.finalTime) * 1000).format('MMMM Do YYYY, HH:mm')
   const nextReleaseTime = moment.utc(Number(state.nextReleaseTime) * 1000).format('MMMM Do YYYY, HH:mm')
-  const linearReleaseInterval = Number(state.linearReleaseInterval / 3600 / 24 / 30).toFixed().toString()
+  const linearReleaseInterval = Number(state.linearReleaseInterval / 3600 / 24 / 7).toFixed().toString()
   const releaseAmount = numeral(getBalanceNumber(new BigNumber(state.releaseAmount))).format('0,0')
   const remainingTokens = numeral(getBalanceNumber(new BigNumber(state.remainingTokens))).format('0,0')
 
@@ -92,11 +92,11 @@ const TokenVesting = () => {
     <StyledCakeStats>
       <CardBody>
         <Heading size="xl" mb="24px">
-          Leek Vesting Info
+          HERTZ Vesting Info
         </Heading>
 
         <Row>
-          <Text fontSize="14px">LEEK Release Start Time</Text>
+          <Text fontSize="14px">HERTZ Release Start Time</Text>
           <Link href="https://www.timeanddate.com/worldclock/timezone/utc">
             <Text bold fontSize="14px" color="primary">
               {releaseTime} UTC
@@ -105,7 +105,7 @@ const TokenVesting = () => {
         </Row>
 
         <Row>
-          <Text fontSize="14px">LEEK Release End Time</Text>
+          <Text fontSize="14px">HERTZ Release End Time</Text>
           <Link href="https://www.timeanddate.com/worldclock/timezone/utc">
             <Text bold fontSize="14px" color="primary">
               {finalTime} UTC
@@ -114,7 +114,7 @@ const TokenVesting = () => {
         </Row>
 
         <Row>
-          <Text fontSize="14px">Next LEEK Release Date</Text>
+          <Text fontSize="14px">Next HERTZ Release Date</Text>
           <Link href="https://www.timeanddate.com/worldclock/timezone/utc">
             <Text bold fontSize="14px" color="primary">
               {nextReleaseTime} UTC
@@ -122,29 +122,29 @@ const TokenVesting = () => {
           </Link>
         </Row>
         <Row>
-          <Text fontSize="14px">LEEK Release Interval</Text>
+          <Text fontSize="14px">HERTZ Release Interval</Text>
           <Text bold fontSize="14px">
-            {linearReleaseInterval} Month
+            {linearReleaseInterval} WEEK
           </Text>
         </Row>
 
         <Row>
-          <Text fontSize="14px">LEEK Release Count </Text>
+          <Text fontSize="14px">HERTZ Release Count </Text>
           <Text bold fontSize="14px">
             {state.releaseCount}
           </Text>
         </Row>
 
         <Row>
-          <Text fontSize="14px">LEEK Release Every Time </Text>
+          <Text fontSize="14px">HERTZ Release Every Time </Text>
           <Text bold fontSize="14px">
-            {releaseAmount} LEEK
+            {releaseAmount} HERTZ
           </Text>
         </Row>
         <Row>
-          <Text fontSize="14px">LEEK Locked </Text>
+          <Text fontSize="14px">HERTZ Locked </Text>
           <Text bold fontSize="14px">
-            {remainingTokens} LEEK
+            {remainingTokens} HERTZ
           </Text>
         </Row>
 

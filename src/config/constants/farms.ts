@@ -13,12 +13,12 @@ const farms: FarmConfig[] = [
   {
     pid: 0,
     risk: 5,
-    lpSymbol: 'LEEK-MATIC LP',
+    lpSymbol: 'HERTZ-MATIC LP',
     lpAddresses: {
       80001: '0x0c532aec168ec6b00c5cdf64d074563db46aa85c',
       137: '0x422F43A620E795E139183947851Fd914a11dD023',
     },
-    tokenSymbol: 'LEEK',
+    tokenSymbol: 'HERTZ',
     tokenAddresses: {
       80001: '0xc657EFDb41eaBA15Cea84d34a2A60b18686FA929',
       137: '0x67A32987a8EAA0644702C362B53B8EeBd126C20b',
@@ -29,12 +29,12 @@ const farms: FarmConfig[] = [
   {
     pid: 1,
     risk: 5,
-    lpSymbol: 'LEEK-USDC LP',
+    lpSymbol: 'HERTZ-USDC LP',
     lpAddresses: {
       80001: '0x8cfd7f8fa7c824b8619fa2d0af5a01315537192c',
       137: '0x6f447ba529007943E05fc678FB04A777816C81c0',
     },
-    tokenSymbol: 'LEEK',
+    tokenSymbol: 'HERTZ',
     tokenAddresses: {
       80001: '0xc657EFDb41eaBA15Cea84d34a2A60b18686FA929',
       137: '0x67A32987a8EAA0644702C362B53B8EeBd126C20b',

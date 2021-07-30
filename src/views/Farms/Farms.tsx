@@ -98,8 +98,8 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
     <Page>
       <Heading as="h1" size="lg" color="primary" mb="10px" style={{ textAlign: 'center' }}>
         {tokenMode
-          ? TranslateString(10002, 'Stake tokens to earn LEEK')
-          : TranslateString(320, 'Stake LP tokens to earn LEEK')}
+          ? TranslateString(10002, 'Stake tokens to earn HERTZ')
+          : TranslateString(320, 'Stake LP tokens to earn HERTZ')}
       </Heading>
       <Flex alignItems="center" justifyContent="center">
         {
@@ -116,7 +116,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
       </Flex>
       <Heading as="h2" color="" mb="10px" style={{ textAlign: 'center' }}>
-        {TranslateString(10000, 'Deposit Fee will be used to buyback LEEK')}
+        {TranslateString(10000, 'Deposit Fee will be used to buyback HERTZ')}
       </Heading>
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <div>
