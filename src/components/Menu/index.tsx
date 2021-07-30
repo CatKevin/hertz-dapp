@@ -27,7 +27,7 @@ const Menu = (props) => {
         account={account}
         login={connect}
         logout={reset}
-        isDark={isDark}
+        isDark={() => { return true }}
         toggleTheme={toggleTheme}
         currentLang={selectedLanguage && selectedLanguage.code}
         langs={allLanguages}

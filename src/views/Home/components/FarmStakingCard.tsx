@@ -17,8 +17,9 @@ import { getBalanceNumber } from '../../../utils/formatBalance'
 
 const StyledFarmStakingCard = styled(Card)`
   background-image: url('./images/leek/2a.png');
+  background-size: 250px 250px;
   background-repeat: no-repeat;
-  background-position: top right;
+  background-position: 220px 70px;;
   min-height: 376px;
 `
 

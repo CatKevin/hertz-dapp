@@ -66,13 +66,6 @@ const Home: React.FC = () => {
 
   return (
     <Page>
-      <Hero>
-        <Heading as="h1" size="xl" mb="20px" color="primary">
-          {TranslateString(576, 'LeekDAO')}
-        </Heading>
-        <Text fontSize="18px">{TranslateString(578, 'Popular DEFI app on MATIC Mainnet.')}</Text>
-        <Text color="warning">Project in Beta. Please use it at your own risk</Text>
-      </Hero>
       <div>
         <BannerImg src="./images/banner.png" alt="banner" />
       </div>

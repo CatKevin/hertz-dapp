@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Container from 'components/layout/Container'
 
 const StyledHero = styled(Box)`
- background-image: linear-gradient(180deg, #c0f6fa 0%, #d9f8fa 100%);
+ background-image: ${({ theme }) => theme.colors.gradients.bubblegum};
   padding-bottom: 32px;
   padding-top: 32px;
 `
