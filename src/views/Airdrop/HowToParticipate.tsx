@@ -103,7 +103,7 @@ const HowToParticipate: React.FC = () => {
                     </Heading>
                     <Text>
                         Check our in-depth guide on
-                        <InlineLink href="https://docs.leekdao.xyz" marginLeft="5px" target="_blank">
+                        <InlineLink href="#" marginLeft="5px" target="_blank">
                             how to participate the LeekDAO Airdrop!
                         </InlineLink>
                     </Text>

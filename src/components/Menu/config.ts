@@ -64,7 +64,7 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Docs',
-        href: 'https://docs.leekdao.xyz/',
+        href: '#',
       },
     ],
   },

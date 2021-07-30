@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardBody, Heading, Text } from 'hertz-uikit'
+import { Card, CardBody, Heading } from 'hertz-uikit'
 import styled from 'styled-components'
 import { Tweet } from 'react-twitter-widgets'
 import useI18n from 'hooks/useI18n'
