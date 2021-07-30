@@ -50,11 +50,11 @@ const Lottery = () => {
     return (
         <div>
             <Hero />
-            <Flex width="100%" flexDirection="column" alignItems="center" justifyContent="center">
+            <Box style={{ textAlign: 'center' }}>
                 <Heading size="xl" color="secondary" mt="40px">
                     Participate Lucky Draw Right now!
                 </Heading>
-            </Flex>
+            </Box>
             <LotteryCard />
             <LotteryRoundContainer>
                 <Flex width="100%" flexDirection="column" alignItems="center" justifyContent="center">

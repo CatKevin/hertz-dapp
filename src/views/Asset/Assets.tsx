@@ -1,5 +1,5 @@
 import React from "react";
-import { BaseLayout, Flex, Heading } from "hertz-uikit";
+import { BaseLayout, Flex, Heading, Box } from "hertz-uikit";
 import Hero from "./Components/General/Hero"
 import BoardCard from "./Components/AssetsCard/BoardCard";
 
@@ -9,11 +9,11 @@ const Assets = () => {
   return (
     <div>
       <Hero title={title} heading={heading} />
-      <Flex width="100%" flexDirection="column" alignItems="center" justifyContent="center">
+      <Box style={{ textAlign: "center" }}>
         <Heading size="xl" color="secondary" mt="40px">
           Join Our Assets Management
         </Heading>
-      </Flex>
+      </Box>
       <BoardCard />
     </div>
   )
