@@ -7,6 +7,7 @@ import Select from 'components/Select/select'
 import VaultHero from "../General/VaultHero"
 import BreadcrumbList from "../General/BreadcrumbList"
 import Divider from "../General/Divider"
+import Questions from "../General/Questions"
 
 const ToggleWrapper = styled.div`
   display: flex;
@@ -71,6 +72,8 @@ const Redemption = () => {
                         <Button as={Link} to="/assets/setup/4">Next</Button>
                     </Box>
                 </Flex>
+
+                <Questions />
             </Container>
 
         </div >

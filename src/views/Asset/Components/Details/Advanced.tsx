@@ -5,6 +5,7 @@ import { Flex, Heading, Text, Box, Input, Button } from "leek-uikit"
 import VaultHero from "../General/VaultHero"
 import BreadcrumbList from "../General/BreadcrumbList"
 import Divider from "../General/Divider"
+import Questions from "../General/Questions"
 
 const Advanced = () => {
 
@@ -32,7 +33,7 @@ const Advanced = () => {
                         Setting a minimum time between deposits and withdrawals can protect a vault from various forms of arbitrage. It defaults to 24 hours.
                     </Text>
 
-                    <div style={{ marginTop: "10px" }}>
+                    <div style={{ marginTop: "10px", width: "50%" }}>
                         <Box style={{ marginTop: "10px" }}>
                             <Text>Timelock shares for</Text>
                             <Input readOnly value="24 hours" />
@@ -48,6 +49,8 @@ const Advanced = () => {
                         <Button as={Link} to="/assets/setup/5">Next</Button>
                     </Box>
                 </Flex>
+
+                <Questions />
             </Container>
         </div >
     )

@@ -10,6 +10,11 @@ const config: MenuEntry[] = [
     href: '/',
   },
   {
+    label: 'Assest Management',
+    icon: 'VaultsIcon',
+    href: '/assets',
+  },
+  {
     label: 'Trade',
     icon: 'TradeIcon',
     items: [
@@ -43,16 +48,12 @@ const config: MenuEntry[] = [
     icon: 'TicketIcon',
     href: '/lottery',
   },
-  {
-    label: 'AirDrop',
-    icon: 'GooseIcon',
-    href: '/airdrop',
-  },
-  {
-    label: 'Assest Management',
-    icon: 'VaultsIcon',
-    href: '/assets',
-  },
+  // {
+  //   label: 'AirDrop',
+  //   icon: 'GooseIcon',
+  //   href: '/airdrop',
+  // },
+
   {
     label: 'More',
     icon: 'MoreIcon',

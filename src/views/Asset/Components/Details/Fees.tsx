@@ -7,6 +7,7 @@ import Select from 'components/Select/select'
 import VaultHero from "../General/VaultHero"
 import BreadcrumbList from "../General/BreadcrumbList"
 import Divider from "../General/Divider"
+import Questions from "../General/Questions"
 
 const ToggleWrapper = styled.div`
   display: flex;
@@ -107,7 +108,7 @@ const Fees = () => {
                     </ToggleWrapper>
 
                     {
-                        isEntranceChecked && <div>
+                        isEntranceChecked && <div style={{ width: "100%" }}>
                             <Box mt="10px">
                                 <Text>Entrance Fees are charged with every new deposit. The selected entrance fee is allocated to the manager.</Text>
                             </Box>
@@ -142,6 +143,8 @@ const Fees = () => {
                     </Box>
 
                 </Flex>
+
+                <Questions />
             </Container>
 
         </div >

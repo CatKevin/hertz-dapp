@@ -7,6 +7,7 @@ import Select from 'components/Select/select'
 import Divider from "../General/Divider"
 import VaultHero from "../General/VaultHero"
 import BreadcrumbList from "../General/BreadcrumbList"
+import Questions from "../General/Questions"
 
 const Vault = () => {
     const [vaultName, setVaultName] = useState("");
@@ -132,6 +133,8 @@ const Vault = () => {
                         <Button disabled={!validVaultName} as={Link} to="/assets/setup/1">Next</Button>
                     </Box>
                 </Box>
+
+                <Questions />
             </Container>
         </div>
     )
